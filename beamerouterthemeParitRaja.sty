@@ -1,0 +1,48 @@
+\ProvidesPackage{beamerouterthemeParitRaja}[2013/02/20]
+
+% Beamer theme by Dr. Johnson Lim
+% Beamer theme contributed by Dr. Johnson Lim <johnson@uthm.edu.my>, 2015
+%
+% This is a simple mod. Contributions are welcomed to further enhance the template features.
+% This program can be redistributed and/or modified under the terms
+% of the GNU Public License, version 2.
+
+\makeatletter
+
+% Background 
+
+\setbeamertemplate{background canvas}{%
+  \ifnum\c@framenumber=1	%First Slide
+  \includegraphics[width=\paperwidth,height=\paperheight]{uthm-outer}
+  \else		%Other Slides
+  \includegraphics[width=\paperwidth,height=\paperheight]{uthm-inner}
+  \fi%
+}
+
+%Footline
+\defbeamertemplate*{footline}{ParitRaja-footline}
+{
+  \leavevmode
+  \hbox
+  {
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=2ex,right]{author in head/foot}%
+	\ifnum\c@framenumber=1	%First Slide
+		\color{white}
+	\else
+		\usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+	\fi
+  \end{beamercolorbox}%
+  
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=2ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{1em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}
+  }
+  \vskip0pt
+}
+
+\makeatother
+
+
+
+
